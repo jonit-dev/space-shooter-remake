@@ -21,7 +21,8 @@ public class EnemyController : MonoBehaviour
 
         if (transform.position.y <= -6)
         {
-            transform.position = new Vector3(Random.Range(-9f, 9f), 6, 0); // reset initial position, with random x, if goes out of bounds on Y
+            float randomX = Random.Range(-9f, 9f);
+            transform.position = new Vector3(randomX, 6, 0); // reset initial position, with random x, if goes out of bounds on Y
         }
 
     }

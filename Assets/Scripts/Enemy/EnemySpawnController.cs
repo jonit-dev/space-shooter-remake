@@ -23,7 +23,7 @@ public class EnemySpawnController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
             GameObject newEnemy = Instantiate(enemy, transform.position + new Vector3(Random.Range(-9f, 9f), 0, 0), Quaternion.identity);
             // Debug.Log("Spawning enemy!");
         }
