@@ -30,8 +30,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.tag);
-
         switch (other.gameObject.tag)
         {
 
