@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     internal PlayerDamage playerDamage;
 
+
+
+    private void Awake() //before start
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
