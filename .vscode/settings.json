@@ -1,5 +1,7 @@
 ﻿{
     "workbench.colorTheme": "2077",
+    "editor.snippetSuggestions": "top",
+    
     "files.exclude":
     {
         "**/.DS_Store":true,

@@ -26,4 +26,32 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.tag);
+
+        switch (other.gameObject.tag)
+        {
+
+            case "Player":
+                // if other is player, then destroy us and damage player
+                //! Player damage code to be added
+                Destroy(gameObject);
+
+                break;
+
+            case "Laser":
+                // if other is laser, destroy us and destroy laser;
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                break;
+
+        }
+
+
+
+    }
+
 }
