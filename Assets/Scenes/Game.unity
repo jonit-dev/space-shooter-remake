@@ -264,6 +264,8 @@ GameObject:
   - component: {fileID: 1851719862}
   - component: {fileID: 1851719866}
   - component: {fileID: 1851719867}
+  - component: {fileID: 1851719868}
+  - component: {fileID: 1851719869}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -359,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be884a65dc25cc34b94ed513f25ecce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1851719868}
   _moveSpeed: 3.5
 --- !u!114 &1851719867
 MonoBehaviour:
@@ -372,8 +375,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b754ce11fd15bf4e975f927ebc9ca6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1851719868}
   _laserPrefab: {fileID: 4367701454558138345, guid: 69716c41479c9924185da85edd33c958, type: 3}
   _fireRate: 0.5
+--- !u!114 &1851719868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851719861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9f76fa4b8abd34e97c11b6fc6aa91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLaser: {fileID: 1851719867}
+  playerMovement: {fileID: 1851719866}
+  playerDamage: {fileID: 1851719869}
+--- !u!114 &1851719869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851719861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4697eee656f5954bb0df4eb3b493340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1851719868}
+  _lives: 3
 --- !u!1 &2060819537
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField]
+    private PlayerController playerController;
+
+    [SerializeField]
     private float _moveSpeed = 3.5f;
 
     private float _movementX;

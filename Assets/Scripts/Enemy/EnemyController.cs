@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
             case "Player":
                 // if other is player, then destroy us and damage player
                 //! Player damage code to be added
+                PlayerController playerController = other.transform.GetComponent<PlayerController>();
+                playerController.playerDamage.Damage();
                 Destroy(gameObject);
 
                 break;

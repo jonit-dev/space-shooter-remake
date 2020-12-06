@@ -6,6 +6,10 @@ public class PlayerLaser : MonoBehaviour
 {
 
     [SerializeField]
+    private PlayerController playerController;
+
+
+    [SerializeField]
     private GameObject _laserPrefab;
 
     [SerializeField]
