@@ -179,7 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1253425685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9ff4d77515c4048a4d3fb078faeae6, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e59e945f9a1f74cbc10d2ae527c641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 4494720518180890702, guid: 7d1c13fad976fed4582d772c230374ec, type: 3}
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be884a65dc25cc34b94ed513f25ecce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1851719868}
+  player: {fileID: 1851719868}
   _moveSpeed: 3.5
 --- !u!114 &1851719867
 MonoBehaviour:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b754ce11fd15bf4e975f927ebc9ca6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1851719868}
+  player: {fileID: 1851719868}
   _laserPrefab: {fileID: 4367701454558138345, guid: 69716c41479c9924185da85edd33c958, type: 3}
   _fireRate: 0.5
 --- !u!114 &1851719868
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4697eee656f5954bb0df4eb3b493340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1851719868}
+  player: {fileID: 1851719868}
   _lives: 3
 --- !u!1 &2060819537
 GameObject:

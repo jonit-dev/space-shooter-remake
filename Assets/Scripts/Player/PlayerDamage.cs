@@ -6,22 +6,22 @@ public class PlayerDamage : MonoBehaviour
 {
 
     [SerializeField]
-    private Player player;
+    private PlayerController player;
 
     [SerializeField]
     private int _lives = 3;
 
 
-    private EnemySpawn _enemySpawn;
+    private EnemySpawnController _enemySpawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        _enemySpawn = GameObject.Find("EnemySpawn").GetComponent<EnemySpawn>();
+        _enemySpawn = GameObject.Find("EnemySpawn").GetComponent<EnemySpawnController>();
 
-        if (!_enemySpawn)
+        if (_enemySpawn == null)
         {
-            Debug.LogError("Spawn manager is null!");
+            Debug.LogError("Spawn manager not found");
         }
 
     }
