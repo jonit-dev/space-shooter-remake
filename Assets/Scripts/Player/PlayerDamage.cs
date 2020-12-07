@@ -6,14 +6,18 @@ public class PlayerDamage : MonoBehaviour
 {
 
     [SerializeField]
-    private PlayerController playerController;
+    private Player player;
 
     [SerializeField]
     private int _lives = 3;
 
+
+    private EnemySpawn _enemySpawn;
+
     // Start is called before the first frame update
     void Start()
     {
+        _enemySpawn = GameObject.Find("EnemySpawn").GetComponent<EnemySpawn>();
 
     }
 
@@ -31,6 +35,7 @@ public class PlayerDamage : MonoBehaviour
 
         if (_lives < 1)
         {
+            _enemySpawn.OnPlayerDeath();
             Destroy(this.gameObject);
         }
     }

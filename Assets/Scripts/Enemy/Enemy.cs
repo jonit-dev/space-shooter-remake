@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
 
     [SerializeField]
@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
             case "Player":
                 // if other is player, then destroy us and damage player
                 //! Player damage code to be added
-                PlayerController player = other.transform.GetComponent<PlayerController>();
+                Player player = other.transform.GetComponent<Player>();
                 if (player != null)
                 {
                     player.playerDamage.Damage();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnController : MonoBehaviour
+public class EnemySpawn : MonoBehaviour
 {
 
     [SerializeField]
@@ -11,10 +11,13 @@ public class EnemySpawnController : MonoBehaviour
     [SerializeField]
     private GameObject _enemyContainer;
 
+    private IEnumerator _spawnCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnInterval());
+        _spawnCoroutine = SpawnInterval();
+        StartCoroutine(_spawnCoroutine);
     }
 
     // Update is called once per frame
@@ -33,5 +36,12 @@ public class EnemySpawnController : MonoBehaviour
             newEnemy.transform.parent = _enemyContainer.transform;
             // Debug.Log("Spawning enemy!");
         }
+
+    }
+
+    public void OnPlayerDeath()
+    {
+        Debug.Log("Player is dead. Stop spawning!");
+        StopCoroutine(_spawnCoroutine);
     }
 }

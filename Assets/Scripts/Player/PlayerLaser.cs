@@ -6,7 +6,7 @@ public class PlayerLaser : MonoBehaviour
 {
 
     [SerializeField]
-    private PlayerController playerController;
+    private Player player;
 
 
     [SerializeField]
