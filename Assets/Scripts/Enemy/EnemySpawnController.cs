@@ -7,6 +7,10 @@ public class EnemySpawnController : MonoBehaviour
 
     [SerializeField]
     private GameObject _enemyPrefab;
+
+    [SerializeField]
+    private GameObject _enemyContainer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class EnemySpawnController : MonoBehaviour
             yield return new WaitForSeconds(5f);
             Vector3 spawnPosition = new Vector3(Random.Range(-9f, 9f), 0, 0);
             GameObject newEnemy = Instantiate(_enemyPrefab, transform.position + spawnPosition, Quaternion.identity);
+            newEnemy.transform.parent = _enemyContainer.transform;
             // Debug.Log("Spawning enemy!");
         }
     }
