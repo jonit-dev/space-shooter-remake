@@ -39,7 +39,7 @@ public class EnemySpawn : MonoBehaviour
 
     }
 
-    public void OnPlayerDeath()
+    public void StopSpawningEnemies()
     {
         Debug.Log("Player is dead. Stop spawning!");
         StopCoroutine(_spawnCoroutine);

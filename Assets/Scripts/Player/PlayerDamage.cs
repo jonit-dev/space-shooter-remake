@@ -19,6 +19,11 @@ public class PlayerDamage : MonoBehaviour
     {
         _enemySpawn = GameObject.Find("EnemySpawn").GetComponent<EnemySpawn>();
 
+        if (!_enemySpawn)
+        {
+            Debug.LogError("Spawn manager is null!");
+        }
+
     }
 
     // Update is called once per frame
@@ -35,7 +40,7 @@ public class PlayerDamage : MonoBehaviour
 
         if (_lives < 1)
         {
-            _enemySpawn.OnPlayerDeath();
+            _enemySpawn.StopSpawningEnemies(); // stop spawning enemies, on player's death
             Destroy(this.gameObject);
         }
     }
