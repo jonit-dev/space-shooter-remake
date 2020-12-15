@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -5282595921192388965
     second: _nemy-small_2
+  - first:
+      213: -5132784597741030218
+    second: enemy-small_0
+  - first:
+      213: 4564231259487795435
+    second: enemy-small_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _nemy-small_0
+      name: enemy-small_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +124,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe85b42e5b16f3e00800000000000000
-      internalID: 1026646673877326063
+      spriteID: 6b4bc0f5a9fa4c8b0800000000000000
+      internalID: -5132784597741030218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _nemy-small_1
+      name: enemy-small_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +145,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 835c64cc5707ab8f0800000000000000
-      internalID: -523982755394566856
+      spriteID: be8f08ee528675f30800000000000000
+      internalID: 4564231259487795435
       vertices: []
       indices: 
       edges: []
