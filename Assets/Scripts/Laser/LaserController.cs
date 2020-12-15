@@ -21,6 +21,12 @@ public class LaserController : MonoBehaviour
 
         if (transform.position.y >= 6) // after it overflows the world boundary area, just remove it to increase game performance
         {
+            // destroy parent
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject, 0.1f);
+            }
+
             Destroy(this.gameObject);
         }
 

@@ -13,8 +13,13 @@ public class PlayerLaser : MonoBehaviour
     private GameObject _laserPrefab;
 
     [SerializeField]
+    private GameObject _laserTripleShotPrefab;
+
+    [SerializeField]
     private float _fireRate = 0.5f;
     private float _nextFire = 0.0f;
+
+    private bool _hasTripleShot = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +36,17 @@ public class PlayerLaser : MonoBehaviour
         {
             _nextFire = Time.time + _fireRate;
 
-            // instantiate new laser beam, 0.8 Y offset to the top
-            GameObject laser = Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
-        }
+            if (_hasTripleShot)
+            {
+                GameObject tripleShotLaser = Instantiate(_laserTripleShotPrefab, transform.position + new Vector3(-0.2f, -0.3f, 0), Quaternion.identity);
+            }
+            else
+            {
+                // instantiate new laser beam, 0.8 Y offset to the top
+                GameObject laser = Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
 
+            }
+
+        }
     }
 }

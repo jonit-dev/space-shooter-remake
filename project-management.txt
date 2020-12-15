@@ -1,0 +1,9 @@
+
+
+- []: Player left and right animations when moving to
+- []: Laser animations
+- []: Add medium and big enemies
+- []: Explosion effects
+- []: UI
+- []: Score
+- []: Sound effects
