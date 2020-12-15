@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 1851719867}
   - component: {fileID: 1851719868}
   - component: {fileID: 1851719869}
+  - component: {fileID: 1851719870}
   - component: {fileID: 1851719863}
   - component: {fileID: 1851719862}
   - component: {fileID: 1851719864}
@@ -569,6 +570,7 @@ MonoBehaviour:
   playerLaser: {fileID: 1851719867}
   playerMovement: {fileID: 1851719866}
   playerDamage: {fileID: 1851719869}
+  playerItem: {fileID: 1851719870}
 --- !u!114 &1851719869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +585,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1851719868}
   _lives: 3
+--- !u!114 &1851719870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851719861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9a7f732a1448742a22f3e5992e4c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1851719868}
 --- !u!1 &1974267416
 GameObject:
   m_ObjectHideFlags: 0

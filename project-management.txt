@@ -1,5 +1,6 @@
 
 
+- []: Player item (power up) pickup action, setup gravity and make it change shot type to triple shot
 - []: Player left and right animations when moving to
 - []: Laser animations
 - []: Add medium and big enemies

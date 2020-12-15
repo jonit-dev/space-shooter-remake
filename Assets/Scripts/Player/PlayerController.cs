@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     internal PlayerDamage playerDamage;
 
-
+    [SerializeField]
+    internal PlayerItem playerItem;
 
     private void Awake() //before start
     {
