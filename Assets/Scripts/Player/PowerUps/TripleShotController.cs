@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpController : MonoBehaviour
+public class TripleShotController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
+
+
 
 
     }
@@ -20,14 +22,11 @@ public class PowerUpController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.tag);
-
         if (other.gameObject.tag == "Player")
         {
-
-            Destroy(this.gameObject);
-
-            Debug.Log("Power up for triple shot activated!");
+            // Enable power up and destroy self
+            PlayerController player = other.transform.GetComponent<PlayerController>();
+            player.playerLaser.hasTripleShot = true;
         }
     }
 }
