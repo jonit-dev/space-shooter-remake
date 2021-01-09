@@ -42,7 +42,7 @@ public class PowerUpController : MonoBehaviour
 
             Destroy(this.gameObject);
 
-            Debug.Log("Power up for triple shot activated!");
+            Debug.Log("Power up activated!");
         }
     }
 }

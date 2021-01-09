@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: -377520252068330418}
   - component: {fileID: -4825803798031725891}
   - component: {fileID: -1984528237886615684}
+  - component: {fileID: -2464183556013507901}
   m_Layer: 0
-  m_Name: ShieldPowerUp
+  m_Name: SpeedPowerUp
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2896554229647148448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.67, y: 0.97, z: 0}
-  m_LocalScale: {x: 3.774759, y: 3.774759, z: 3.774759}
+  m_LocalScale: {x: 4.079332, y: 4.079332, z: 4.079332}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1613227489
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4651472796450862913, guid: 58dbfbe5dbdf85844a470cc5ab554768, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,5 +163,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fdbf7b34fc18e443968f004d9381668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+--- !u!114 &-2464183556013507901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896554229647148448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1013f21bb8e96428f6bd283a152e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

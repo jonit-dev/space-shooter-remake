@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Laser
   - Enemy
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -45,4 +46,7 @@ TagManager:
     locked: 0
   - name: Shots
     uniqueID: 1410588483
+    locked: 0
+  - name: Foreground
+    uniqueID: 2681739807
     locked: 0

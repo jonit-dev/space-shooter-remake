@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     internal PlayerItem playerItem;
 
+
     private void Awake() //before start
     {
 

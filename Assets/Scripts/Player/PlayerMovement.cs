@@ -14,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
     private float _movementX;
     private float _movementY;
 
+    private bool _hasSpeedBoost = false;
+    private float _speedBoost = 1.5f;
+
+    private Coroutine _speedBoostCoroutine;
+
 
 
     void Start()
@@ -41,7 +46,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = new Vector3(_movementX, _movementY, 0);
         //move in meters/second (real time), to a specified vector direction.
 
-        transform.Translate(direction * _moveSpeed * Time.deltaTime);
+        // if player has speed boost, increase its speed!
+        transform.Translate(direction * (_hasSpeedBoost ? (_moveSpeed * _speedBoost) : _moveSpeed) * Time.deltaTime);
+
     }
 
     void clampMovementOutsideBoundaries(float xMin, float xMax, float yMin, float yMax)
@@ -59,6 +66,28 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(11, transform.position.y, 0);
         }
+    }
+
+    private IEnumerator SetSpeedBackToNormal()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+
+            player.playerMovement._hasSpeedBoost = false;
+            Debug.Log("Disabling player speed boost!");
+            StopCoroutine(_speedBoostCoroutine);
+        }
+    }
+
+    public void SpeedBoost()
+    {
+
+        _hasSpeedBoost = true;
+
+        _speedBoostCoroutine = StartCoroutine(SetSpeedBackToNormal()); // wait for 5 secs before disabling again!
+
+
     }
 
 }
