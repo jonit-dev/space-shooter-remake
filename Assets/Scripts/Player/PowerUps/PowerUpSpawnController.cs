@@ -7,19 +7,11 @@ public class PowerUpSpawnController : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject _tripleShotPref;
-
-    [SerializeField]
-    private GameObject _speedBoostPrefab;
-
-    [SerializeField]
-    private GameObject _shieldPrefab;
-
-    [SerializeField]
     private GameObject _powerUpContainer;
 
     private Coroutine _spawnInterval;
 
+    [SerializeField]
     private GameObject[] _powerUps;
 
     // Start is called before the first frame update
@@ -28,9 +20,6 @@ public class PowerUpSpawnController : MonoBehaviour
 
         // Add it to somewhere like the Start() method
         _spawnInterval = StartCoroutine(SpawnInternal());
-
-        _powerUps = new GameObject[] { _tripleShotPref, _shieldPrefab, _speedBoostPrefab };
-
 
     }
 
@@ -44,7 +33,7 @@ public class PowerUpSpawnController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
 
 
             Debug.Log(_powerUps);
