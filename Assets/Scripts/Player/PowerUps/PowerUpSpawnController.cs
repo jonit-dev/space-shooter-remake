@@ -41,9 +41,9 @@ public class PowerUpSpawnController : MonoBehaviour
 
             Vector3 spawnPosition = new Vector3(Random.Range(-9f, 9f), 0, 0);
 
-            System.Random r = new System.Random();
 
-            GameObject newPowerUp = Instantiate(_powerUps[r.Next(0, _powerUps.Length)], transform.position + spawnPosition, Quaternion.identity);
+
+            GameObject newPowerUp = Instantiate(_powerUps[Random.Range(0, _powerUps.Length)], transform.position + spawnPosition, Quaternion.identity);
             newPowerUp.transform.parent = _powerUpContainer.transform;
             Debug.Log("Spawning power up!");
         }

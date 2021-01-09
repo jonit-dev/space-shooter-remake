@@ -277,10 +277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc63ad1463c72844900058563413dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tripleShotPref: {fileID: 5012107139494706271, guid: 4c261f5689a66a144abcce28e66963e1, type: 3}
-  _speedBoostPrefab: {fileID: 2896554229647148448, guid: 0969d17b815f26343838bfe981293cb7, type: 3}
-  _shieldPrefab: {fileID: 8384284343815581797, guid: 77b150ba9f927db4bb907621b9dd34cc, type: 3}
   _powerUpContainer: {fileID: 624469143}
+  _powerUps:
+  - {fileID: 8384284343815581797, guid: 77b150ba9f927db4bb907621b9dd34cc, type: 3}
+  - {fileID: 2896554229647148448, guid: 0969d17b815f26343838bfe981293cb7, type: 3}
+  - {fileID: 5012107139494706271, guid: 4c261f5689a66a144abcce28e66963e1, type: 3}
 --- !u!4 &1032520712
 Transform:
   m_ObjectHideFlags: 0
@@ -658,7 +659,6 @@ MonoBehaviour:
   _laserPrefab: {fileID: 4367701454558138345, guid: 69716c41479c9924185da85edd33c958, type: 3}
   _laserTripleShotPrefab: {fileID: 6979424873879684306, guid: 943c2387c66409740829b70ece7be842, type: 3}
   _fireRate: 0.5
-  hasTripleShot: 0
 --- !u!114 &1851719868
 MonoBehaviour:
   m_ObjectHideFlags: 0
