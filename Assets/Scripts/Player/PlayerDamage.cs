@@ -16,7 +16,7 @@ public class PlayerDamage : MonoBehaviour
 
     private bool _hasShield = false;
 
-    private Coroutine _shieldCoroutine;
+
 
     [SerializeField]
     private ShieldEffectController _shieldPrefab;
@@ -66,20 +66,16 @@ public class PlayerDamage : MonoBehaviour
         _shieldInstance.player = player;
 
         _hasShield = true;
-        _shieldCoroutine = StartCoroutine(RemoveShield()); // wait for 5 secs before disabling again!
+        StartCoroutine(RemoveShield()); // wait for 10 secs before disabling again!
     }
 
     private IEnumerator RemoveShield()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(10f);
 
-            _hasShield = false;
-            Debug.Log("Disabling player shield");
-            StopCoroutine(_shieldCoroutine);
-            _shieldInstance.Disable();
-        }
+        _hasShield = false;
+        Debug.Log("Disabling player shield");
+        _shieldInstance.Disable();
     }
 
 

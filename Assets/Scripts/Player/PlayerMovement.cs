@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _hasSpeedBoost = false;
     private float _speedBoost = 1.5f;
 
-    private Coroutine _speedBoostCoroutine;
 
 
 
@@ -70,14 +69,13 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator SetSpeedBackToNormal()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(5f);
 
-            player.playerMovement._hasSpeedBoost = false;
-            Debug.Log("Disabling player speed boost!");
-            StopCoroutine(_speedBoostCoroutine);
-        }
+        yield return new WaitForSeconds(10f);
+
+        player.playerMovement._hasSpeedBoost = false;
+        Debug.Log("Disabling player speed boost!");
+
+
     }
 
     public void SpeedBoost()
@@ -85,9 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         _hasSpeedBoost = true;
 
-        _speedBoostCoroutine = StartCoroutine(SetSpeedBackToNormal()); // wait for 5 secs before disabling again!
-
-
+        StartCoroutine(SetSpeedBackToNormal()); // wait for 5 secs before disabling again!
     }
 
 }
