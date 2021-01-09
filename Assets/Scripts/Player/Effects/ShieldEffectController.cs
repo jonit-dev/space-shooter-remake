@@ -8,6 +8,14 @@ public class ShieldEffectController : MonoBehaviour
 
     public PlayerController player;
 
+    private float _scaleMin = 0.47f;
+    private float _scaleMax = 0.53f;
+    private float _scaleStep = 0.0025f;
+
+    private string _animDirection = "Grow";
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +25,43 @@ public class ShieldEffectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player)
+        if (player) // follow player position
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         }
+
+        transform.Rotate(0, 0, 0.25f, Space.Self);
+
+        // Growing animation
+
+        switch (_animDirection)
+        {
+            case "Grow":
+
+                transform.localScale += new Vector3(_scaleStep, _scaleStep, _scaleStep);
+
+                if (transform.localScale.x >= _scaleMax)
+                {
+                    _animDirection = "Reduce";
+                }
+
+                break;
+            case "Reduce":
+
+                transform.localScale += new Vector3(-_scaleStep, -_scaleStep, -_scaleStep);
+
+                if (transform.localScale.x <= _scaleMin)
+                {
+                    _animDirection = "Grow";
+                }
+                break;
+        }
+
+    }
+
+    public void Disable()
+    {
+        Debug.Log("Disabling shield effect");
+        Destroy(this.gameObject);
     }
 }

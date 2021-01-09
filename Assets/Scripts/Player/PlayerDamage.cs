@@ -21,6 +21,8 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField]
     private ShieldEffectController _shieldPrefab;
 
+    private ShieldEffectController _shieldInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +62,8 @@ public class PlayerDamage : MonoBehaviour
 
         Debug.Log("Activating player shield!");
 
-        ShieldEffectController shieldEffect = Instantiate(_shieldPrefab, transform.position, Quaternion.identity);
-        shieldEffect.player = player;
+        _shieldInstance = Instantiate(_shieldPrefab, transform.position, Quaternion.identity);
+        _shieldInstance.player = player;
 
         _hasShield = true;
         _shieldCoroutine = StartCoroutine(RemoveShield()); // wait for 5 secs before disabling again!
@@ -76,6 +78,7 @@ public class PlayerDamage : MonoBehaviour
             _hasShield = false;
             Debug.Log("Disabling player shield");
             StopCoroutine(_shieldCoroutine);
+            _shieldInstance.Disable();
         }
     }
 
