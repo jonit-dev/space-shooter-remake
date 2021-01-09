@@ -20,7 +20,10 @@ public class ShieldPowerUpController : MonoBehaviour
         PlayerController player = other.transform.GetComponent<PlayerController>();
         if (player)
         {
-            player.playerDamage.ActivateShield();
+            if (!player.playerDamage.hasShield) // if theres no shield currently available!
+            {
+                player.playerDamage.ActivateShield();
+            }
         }
 
     }

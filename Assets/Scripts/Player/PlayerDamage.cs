@@ -14,7 +14,7 @@ public class PlayerDamage : MonoBehaviour
 
     private EnemySpawnController _enemySpawn;
 
-    private bool _hasShield = false;
+    public bool hasShield = false;
 
 
 
@@ -44,7 +44,7 @@ public class PlayerDamage : MonoBehaviour
 
     public void Damage()
     {
-        if (!_hasShield) // if we don't have a shield!
+        if (!hasShield) // if we don't have a shield!
         {
             _lives -= 1;
             Debug.Log("Removing 1 player life! Total: " + _lives);
@@ -65,7 +65,7 @@ public class PlayerDamage : MonoBehaviour
         _shieldInstance = Instantiate(_shieldPrefab, transform.position, Quaternion.identity);
         _shieldInstance.player = player;
 
-        _hasShield = true;
+        hasShield = true;
         StartCoroutine(RemoveShield()); // wait for 10 secs before disabling again!
     }
 
@@ -73,7 +73,7 @@ public class PlayerDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
 
-        _hasShield = false;
+        hasShield = false;
         Debug.Log("Disabling player shield");
         _shieldInstance.Disable();
     }
