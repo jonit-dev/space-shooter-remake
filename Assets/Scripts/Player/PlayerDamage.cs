@@ -14,6 +14,13 @@ public class PlayerDamage : MonoBehaviour
 
     private EnemySpawnController _enemySpawn;
 
+    private bool _hasShield = false;
+
+    private Coroutine _shieldCoroutine;
+
+    [SerializeField]
+    private ShieldEffectController _shieldPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +42,40 @@ public class PlayerDamage : MonoBehaviour
 
     public void Damage()
     {
-        _lives -= 1;
-        Debug.Log("Removing 1 player life! Total: " + _lives);
-
-        if (_lives < 1)
+        if (!_hasShield) // if we don't have a shield!
         {
-            _enemySpawn.StopSpawningEnemies(); // stop spawning enemies, on player's death
-            Destroy(this.gameObject);
+            _lives -= 1;
+            Debug.Log("Removing 1 player life! Total: " + _lives);
+
+            if (_lives < 1)
+            {
+                _enemySpawn.StopSpawningEnemies(); // stop spawning enemies, on player's death
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    public void ActivateShield()
+    {
+
+        Debug.Log("Activating player shield!");
+
+        ShieldEffectController shieldEffect = Instantiate(_shieldPrefab, transform.position, Quaternion.identity);
+        shieldEffect.player = player;
+
+        _hasShield = true;
+        _shieldCoroutine = StartCoroutine(RemoveShield()); // wait for 5 secs before disabling again!
+    }
+
+    private IEnumerator RemoveShield()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+
+            _hasShield = false;
+            Debug.Log("Disabling player shield");
+            StopCoroutine(_shieldCoroutine);
         }
     }
 

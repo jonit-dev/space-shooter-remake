@@ -30,9 +30,12 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+
+        Debug.Log(other.gameObject.tag);
+
         switch (other.gameObject.tag)
         {
-
             case "Player":
                 // if other is player, then destroy us and damage player
                 //! Player damage code to be added
@@ -40,8 +43,8 @@ public class EnemyController : MonoBehaviour
                 if (player != null)
                 {
                     player.playerDamage.Damage();
-                    Destroy(gameObject);
                 }
+                Destroy(gameObject);
 
                 break;
 
