@@ -19,7 +19,7 @@ public class PlayerLaser : MonoBehaviour
     private float _fireRate = 0.5f;
     private float _nextFire = 0.0f;
 
-    public bool hasTripleShot = false;
+    private bool _hasTripleShot = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class PlayerLaser : MonoBehaviour
         {
             _nextFire = Time.time + _fireRate;
 
-            if (hasTripleShot)
+            if (_hasTripleShot)
             {
                 GameObject tripleShotLaser = Instantiate(_laserTripleShotPrefab, transform.position + new Vector3(-0.2f, -0.3f, 0), Quaternion.identity);
             }
@@ -58,4 +58,21 @@ public class PlayerLaser : MonoBehaviour
         }
 
     }
+
+    public void ActivateTripleShot()
+    {
+        _hasTripleShot = true;
+        StartCoroutine(DisableTripleShot());
+
+    }
+
+    private IEnumerator DisableTripleShot()
+    {
+
+        yield return new WaitForSeconds(10f);
+        _hasTripleShot = false;
+
+    }
+
+
 }

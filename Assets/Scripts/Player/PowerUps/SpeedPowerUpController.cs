@@ -24,7 +24,10 @@ public class SpeedPowerUpController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerController player = other.transform.GetComponent<PlayerController>();
-        player.playerMovement.SpeedBoost(); //active speed boost!
+        if (player)
+        {
+            player.playerMovement.SpeedBoost(); //active speed boost!
+        }
 
     }
 

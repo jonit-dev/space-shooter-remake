@@ -22,11 +22,14 @@ public class TripleShotController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "ShieldEffect")
         {
             // Enable power up and destroy self
             PlayerController player = other.transform.GetComponent<PlayerController>();
-            player.playerLaser.hasTripleShot = true;
+            if (player)
+            {
+                player.playerLaser.ActivateTripleShot();
+            }
         }
     }
 }

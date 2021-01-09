@@ -18,7 +18,10 @@ public class ShieldPowerUpController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerController player = other.transform.GetComponent<PlayerController>();
-        player.playerDamage.ActivateShield();
+        if (player)
+        {
+            player.playerDamage.ActivateShield();
+        }
 
     }
 }

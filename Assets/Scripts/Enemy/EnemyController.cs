@@ -33,6 +33,9 @@ public class EnemyController : MonoBehaviour
 
         switch (other.gameObject.tag)
         {
+            case "ShieldEffect":
+                Destroy(gameObject);
+                break;
             case "Player":
                 // if other is player, then destroy us and damage player
                 //! Player damage code to be added
