@@ -36,9 +36,6 @@ public class PowerUpSpawnController : MonoBehaviour
             yield return new WaitForSeconds(5f);
 
 
-            Debug.Log(_powerUps);
-
-
             Vector3 spawnPosition = new Vector3(Random.Range(-9f, 9f), 0, 0);
 
 

@@ -57,6 +57,14 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
+    public void ShieldDeactivate()
+    {
+        hasShield = false;
+        Debug.Log("Disabling player shield");
+        _shieldInstance.Disable();
+        StopCoroutine(RemoveShield());
+    }
+
     public void ActivateShield()
     {
 
@@ -73,9 +81,11 @@ public class PlayerDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
 
-        hasShield = false;
-        Debug.Log("Disabling player shield");
-        _shieldInstance.Disable();
+        if (_shieldInstance && hasShield)
+        {
+            ShieldDeactivate();
+        }
+
     }
 
 

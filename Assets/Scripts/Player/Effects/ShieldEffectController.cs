@@ -61,7 +61,10 @@ public class ShieldEffectController : MonoBehaviour
 
     public void Disable()
     {
-        Debug.Log("Disabling shield effect");
-        Destroy(this.gameObject);
+        if (this.gameObject)
+        {
+            Debug.Log("Disabling shield effect");
+            Destroy(this.gameObject);
+        }
     }
 }

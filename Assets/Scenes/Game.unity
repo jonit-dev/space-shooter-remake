@@ -689,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1851719868}
   _lives: 3
+  hasShield: 0
   _shieldPrefab: {fileID: 5895241246269137422, guid: 3887f254862ad7f479a4fe2a248deea6, type: 3}
 --- !u!114 &1851719870
 MonoBehaviour:
