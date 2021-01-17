@@ -19,16 +19,16 @@ public class ShieldEffectController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (player)
+        {
+            transform.parent = player.transform;
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player) // follow player position
-        {
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-        }
 
         transform.Rotate(0, 0, 0.25f, Space.Self);
 
