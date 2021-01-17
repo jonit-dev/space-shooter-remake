@@ -54,6 +54,11 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case "Laser":
+
+                // add to player's score
+                PlayerController playerLaser = GameObject.Find("Player").GetComponent<PlayerController>();
+                playerLaser.playerScore.Score += 10;
+
                 // if other is laser, destroy us and destroy laser;
                 Destroy(other.gameObject);
                 Destroy(gameObject);
