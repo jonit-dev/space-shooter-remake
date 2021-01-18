@@ -9,11 +9,24 @@ public class PlayerScore : MonoBehaviour
     [SerializeField]
     private PlayerController player;
 
-    public int Score { get; set; }
+    private int _score;
+
+    public int Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
+            player.canvas.UpdateScore();
+        }
+    }
 
     void Start()
     {
-
+        Score = 0;
     }
 
     // Update is called once per frame

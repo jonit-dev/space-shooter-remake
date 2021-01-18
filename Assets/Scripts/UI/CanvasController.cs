@@ -8,10 +8,16 @@ public class CanvasController : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    private Text text;
+    private Text _uiScoreText;
 
     [SerializeField]
     private PlayerController player;
+
+    [SerializeField]
+    private Sprite[] _liveSprites;
+
+    [SerializeField]
+    private Image _uiLivesImage;
 
     void Start()
     {
@@ -21,6 +27,17 @@ public class CanvasController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = $"Score : {player.playerScore.Score}";
+
+
+    }
+
+    public void UpdateLives()
+    {
+        _uiLivesImage.sprite = _liveSprites[player.playerDamage.lives];
+    }
+
+    public void UpdateScore()
+    {
+        _uiScoreText.text = $"Score: {player.playerScore.Score}";
     }
 }

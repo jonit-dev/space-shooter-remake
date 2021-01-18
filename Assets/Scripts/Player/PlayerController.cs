@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     internal PlayerScore playerScore;
 
+    [SerializeField]
+    public CanvasController canvas;
+
 
     private void Awake() //before start
     {

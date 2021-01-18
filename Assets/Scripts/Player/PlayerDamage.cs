@@ -9,7 +9,7 @@ public class PlayerDamage : MonoBehaviour
     private PlayerController player;
 
     [SerializeField]
-    private int _lives = 3;
+    public int lives = 3;
 
 
     private EnemySpawnController _enemySpawn;
@@ -46,10 +46,11 @@ public class PlayerDamage : MonoBehaviour
     {
         if (!hasShield) // if we don't have a shield!
         {
-            _lives -= 1;
-            Debug.Log("Removing 1 player life! Total: " + _lives);
+            lives -= 1;
+            player.canvas.UpdateLives();
+            Debug.Log("Removing 1 player life! Total: " + lives);
 
-            if (_lives < 1)
+            if (lives < 1)
             {
                 _enemySpawn.StopSpawningEnemies(); // stop spawning enemies, on player's death
                 Destroy(this.gameObject);
