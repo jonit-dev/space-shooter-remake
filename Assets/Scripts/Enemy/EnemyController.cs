@@ -8,10 +8,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float _moveSpeed = 1.5f;
 
+    private PlayerController _player;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        _player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -37,17 +39,17 @@ public class EnemyController : MonoBehaviour
 
                 // Deactivate player's shield
                 ShieldEffectController shield = other.transform.GetComponent<ShieldEffectController>();
-                shield.player.playerDamage.ShieldDeactivate();
+                _player.playerDamage.ShieldDeactivate();
                 Destroy(gameObject); //self destroy
 
                 break;
             case "Player":
                 // if other is player, then destroy us and damage player
                 //! Player damage code to be added
-                PlayerController player = other.transform.GetComponent<PlayerController>();
-                if (player != null)
+
+                if (_player != null)
                 {
-                    player.playerDamage.Damage();
+                    _player.playerDamage.Damage();
                 }
                 Destroy(gameObject);
 
@@ -55,13 +57,15 @@ public class EnemyController : MonoBehaviour
 
             case "Laser":
 
-                // add to player's score
-                PlayerController playerLaser = GameObject.Find("Player").GetComponent<PlayerController>();
-                playerLaser.playerScore.Score += 10;
+                if (_player != null)
+                {
+                    _player.playerScore.Score += 10;
+                    Destroy(other.gameObject); //destroy the laser
+                    // if other is laser, destroy us and destroy laser;
+                    Destroy(gameObject);
+                }
 
-                // if other is laser, destroy us and destroy laser;
-                Destroy(other.gameObject);
-                Destroy(gameObject);
+
                 break;
 
         }
